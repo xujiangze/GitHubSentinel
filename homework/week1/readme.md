@@ -62,6 +62,9 @@ python src/main.py
 略, 主要是模仿老师的对话进行项目开发和引导.体现过程即可.
 
 # 作业3
+略, 主要是通过对话来引导chatgpt实现功能, 体现过程即可.
+
+第一部分可以直接要求诸如实现如下的releases功能即可.
 只要实现如下述接口的获取github的对应repo的最新release即可.
 github api文档位置: https://docs.github.com/en/rest/releases/releases?apiVersion=2022-11-28#get-the-latest-release
 eg: 如下代码
