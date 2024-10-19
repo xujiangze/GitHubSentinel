@@ -81,3 +81,5 @@ class LLM:
         return response.choices[0].message.content
 
 ```
+执行完结果
+![img.png](img/2.1result.png)
