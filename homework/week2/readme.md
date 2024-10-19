@@ -81,5 +81,16 @@ class LLM:
         return response.choices[0].message.content
 
 ```
+修改完毕上述之后,取消定时执行的注释
+src/main.py 39行
+安装openai 
+```bash
+pip install openai
+```
+
+执行代码
+```bash
+python src/main.py
+```
 执行完结果
 ![img.png](img/2.1result.png)
