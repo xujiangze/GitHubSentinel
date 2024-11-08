@@ -26,8 +26,8 @@ class WebHookNotifierClient(NotifierABC):
             "key": self.webhook_key
         }
         data = {
-            "msgtype": "text",
-            "text": {
+            "msgtype": "markdown",
+            "markdown": {
                 "content": markdown_content,
             }
         }
@@ -50,8 +50,8 @@ class WebHookNotifierClient(NotifierABC):
             "key": self.webhook_key
         }
         data = {
-            "msgtype": "text",
-            "text": {
+            "msgtype": "markdown",
+            "markdown": {
                 "content": markdown_content
             }
         }
@@ -65,5 +65,5 @@ if __name__ == '__main__':
     webhook_url = "https://qyapi.weixin.qq.com/cgi-bin/webhook/send"
     webhook_key = "你的weebhook"
     notifier = WebHookNotifierClient(webhook_url, webhook_key)
-    notifier.notify("Hello, World!")
-    notifier.notify_by_mentioned("Hello, World!", mentioned_mobile_list=["企业微信群内部成员的手机号"])
+    notifier.notify("# Hello, World!")
+    notifier.notify_by_mentioned("# Hello, World!", mentioned_mobile_list=["企业微信群内部成员的手机号"])

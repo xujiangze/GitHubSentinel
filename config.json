@@ -13,7 +13,9 @@
         "to": "test@zaijidata.com"
     },
     "llm": {
-        "model_type": "ollama",
+        "model_type": "openai",
+        "openai_base_url": "你的中转url",
+        "openai_api_key": "中转代理key",
         "openai_model_name": "gpt-4o-mini",
         "ollama_model_name": "llama3.1",
         "ollama_api_url": "http://localhost:11434/api/chat"
@@ -21,9 +23,18 @@
     "report_types": [
         "github",
         "hacker_news_hours_topic",
-        "hacker_news_daily_report"
+        "hacker_news_daily_report",
+        "science_news_hours_topic"
     ],
     "slack": {
         "webhook_url": "your_slack_webhook_url"
+    },
+    "science_news": {
+        "url": "https://apis.tianapi.com/sicprobe/index",
+        "key": "你的key"
+    },
+    "wecom_webhook": {
+        "url": "https://qyapi.weixin.qq.com/cgi-bin/webhook/send",
+        "key": "你的key"
     }
 }
