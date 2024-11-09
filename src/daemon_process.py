@@ -53,15 +53,16 @@ def science_new_job(science_new_client, report_generator, webhook_notifier):
     webhook_notifier.notify(report)
 
 
-def hn_daily_job(hacker_news_client, report_generator, notifier):
+def hn_daily_job(hacker_news_client, report_generator, webhook_notifier):
     LOG.info("[开始执行定时任务]Hacker News 今日前沿技术趋势")
     # 获取当前日期，并格式化为 'YYYY-MM-DD' 格式
     date = datetime.now().strftime('%Y-%m-%d')
+    hacker_news_client.export_top_stories()
     # 生成每日汇总报告的目录路径
     directory_path = os.path.join('hacker_news', date)
     # 生成每日汇总报告并保存
     report, _ = report_generator.generate_hn_daily_report(directory_path)
-    notifier.notify_hn_report(date, report)
+    webhook_notifier.notify(report)
     LOG.info(f"[定时任务执行完毕]")
 
 
